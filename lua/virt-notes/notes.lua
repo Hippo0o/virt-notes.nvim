@@ -109,6 +109,7 @@ function M.set_all_notes(bufnr, all_notes, with_autocmd)
     for linenr, notes in pairs(all_notes) do
         vim.api.nvim_buf_set_extmark(bufnr, config.namespace, math.min(linenr, max_line), 0, {
             virt_text = notes_to_virt_text(notes),
+            right_gravity = false,
         })
     end
 
